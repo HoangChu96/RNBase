@@ -1,0 +1,46 @@
+query me {
+  me {
+    ...UserDtoModel
+  }
+}
+
+query GetRestaurant {
+  restaurantsClient {
+    _id
+    name
+    domain
+    isTest
+    address
+    media {
+      url
+      thumbnail
+    }
+    settings {
+      _id
+      value
+      resid
+      type
+      startDate
+      endDate
+      distanceStart
+      distanceEnd
+      priceDistance
+      title
+      tax {
+        taxIn
+        taxOut
+        taxDelivery
+      }
+      titleVi
+      titleNor
+      day
+      isOpen
+      timeClose
+      timeOpen
+    }
+  }
+}
+
+query ValidateTerminal($terminalInput: TerminalInput!) {
+  validateTerminal(terminalInput: $terminalInput)
+}

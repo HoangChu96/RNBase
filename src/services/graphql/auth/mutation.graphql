@@ -1,0 +1,21 @@
+mutation login($input: LoginUserInput!) {
+  login(loginInput: $input) {
+    ...JWTModel
+  }
+}
+
+mutation refreshToken($refreshTokenInput: RefreshTokenInput!) {
+  refreshToken(refreshTokenInput: $refreshTokenInput) {
+    ...JWTModel
+  }
+}
+
+mutation checkSuperAdmin($isSuperAdminInput: IsSuperAdminInput!) {
+  isSuperAmin(isSuperAdminInput: $isSuperAdminInput)
+}
+
+mutation loginRestaurantAdmin($loginInput: LoginUserInput!) {
+  loginRestaurantAdmin(loginInput: $loginInput) {
+    ...JWTModel
+  }
+}

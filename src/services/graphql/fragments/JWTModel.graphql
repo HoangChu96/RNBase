@@ -1,0 +1,25 @@
+fragment JWTModel on JWT {
+  token
+  expiresAt
+  refreshToken
+  refreshTokenExpiresAt
+  jwtPayload {
+    _id
+    user {
+      _id
+      fullName
+      isSuperAdmin
+      isManager
+      permission {
+        _id
+        feature
+        type
+      }
+      username
+      avatar {
+        _id
+        thumbnail
+      }
+    }
+  }
+}

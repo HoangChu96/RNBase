@@ -1,0 +1,40 @@
+fragment UserModel on User {
+  _id
+  username
+  fullName
+  address
+  type
+  phoneNumber
+  createdAt
+  updatedAt
+}
+
+fragment UserDtoModel on UserDto {
+  _id
+  username
+  address
+  createdAt
+  # createdBy
+  deletedAt
+  fullName
+  phoneNumber
+  avatar {
+    _id
+    thumbnail
+  }
+  avatarId
+  resid
+  type
+  avatar {
+    _id
+    thumbnail
+  }
+  permission {
+    _id
+    createdAt
+    feature
+    resid
+    type
+    updatedAt
+  }
+}

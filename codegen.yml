@@ -1,0 +1,15 @@
+schema: ${BASE_URL}
+documents: 'src/**/*.graphql'
+generates:
+  src/services/graphql/graphql-sdk-generated.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-query'
+    config:
+      exposeQueryKeys: true
+      exposeMutationKeys: true
+      exposeFetcher: true
+      useTypeImports: true
+      namingConvention: pascal-case#pascalCase
+      fetcher: ./graphql-fetcher#fetcher
