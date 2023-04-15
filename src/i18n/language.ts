@@ -1,7 +1,13 @@
-import i18n, {TranslateOptions} from 'i18n-js';
+import {
+  I18n,
+  TranslateOptions,
+} from 'i18n-js';
 import memoize from 'lodash.memoize';
 import {I18nManager} from 'react-native';
 import * as RNLocalize from 'react-native-localize';
+
+// import en from './translation/en.json';
+// import no from './translation/no.json';
 
 export enum ELang {
   US = 'US',
@@ -13,6 +19,8 @@ const translationGetters: any = {
   no: () => require('./translation/no.json'),
   en: () => require('./translation/en.json'),
 };
+
+const i18n = new I18n();
 
 export const translate: any = memoize(
   (key: any, config?: any) => i18n.t(key, config),
@@ -40,6 +48,7 @@ export const setI18nConfig = (locale?: string) => {
   // update layout direction
   I18nManager.forceRTL(isRTL);
   // set i18n-js config
+
   i18n.translations = {
     [languageTag]: translationGetters[languageTag](),
   };
@@ -51,7 +60,7 @@ export const convertLocale = (locale: string): string => {
     locale = 'en';
   }
   if (locale === ELang.VN) {
-    locale = 'vi';
+    locale = 'en';
   }
   if (locale === ELang.NO) {
     locale = 'no';

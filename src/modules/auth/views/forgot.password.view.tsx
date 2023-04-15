@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import {
+  Animated,
   ImageBackground,
   KeyboardAvoidingView,
   SafeAreaView,
@@ -13,9 +14,9 @@ import {
 
 import {colors} from '@app/theme';
 import images from '@app/utils/images';
+import {commonStyles} from '@app/utils/styles';
 
-import LoginSocialIcon from '../components/login.social.icon';
-import useLoginController from '../view-controllers/useLoginController';
+import useRegisterController from '../view-controllers/useRegisterController';
 
 interface LoginViewProps {}
 
@@ -28,15 +29,8 @@ const Input = ({title}: {title: string}) => {
   );
 };
 
-const LoginView = (props: LoginViewProps) => {
-  const {
-    onDismissKeyboard,
-    goToRegisterAccount,
-    goToForgotPassword,
-    onPressGoogleAuth,
-    onPressFacebookAuth,
-    onPressAppleAuth,
-  } = useLoginController();
+const ForgotPasswordView = (props: LoginViewProps) => {
+  const {onDismissKeyboard, goToLoginAccount} = useRegisterController();
 
   return (
     <ImageBackground
@@ -47,37 +41,26 @@ const LoginView = (props: LoginViewProps) => {
         activeOpacity={1}
         onPress={onDismissKeyboard}
         style={styles.flex}>
-        <View style={styles.content}>
+        <Animated.View style={styles.content}>
           <KeyboardAvoidingView behavior="padding">
-            <Text style={styles.title}>Login</Text>
+            <Text style={styles.title}>Forgot Password</Text>
             <View>
+              <Input title="Full Name" />
               <Input title="Email" />
               <Input title="Password" />
             </View>
-            <View style={styles.forgotPass}>
-              <Text
-                style={[styles.baseTxt, styles.bold]}
-                onPress={goToForgotPassword}>
-                Forgot Password?
-              </Text>
-            </View>
-            <LoginSocialIcon
-              onPressGoogle={onPressGoogleAuth}
-              onPressApple={onPressAppleAuth}
-              onPressFacebook={onPressFacebookAuth}
-            />
           </KeyboardAvoidingView>
-        </View>
+        </Animated.View>
         <SafeAreaView style={styles.bottom}>
           <Text style={styles.newHere}>
-            New Here?
-            <Text style={styles.register} onPress={goToRegisterAccount}>
+            Already Member?
+            <Text style={styles.register} onPress={goToLoginAccount}>
               {' '}
-              Register
+              Login
             </Text>
           </Text>
           <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonTxt}>Login</Text>
+            <Text style={styles.buttonTxt}>Register</Text>
           </TouchableOpacity>
         </SafeAreaView>
       </TouchableOpacity>
@@ -85,7 +68,7 @@ const LoginView = (props: LoginViewProps) => {
   );
 };
 
-export default LoginView;
+export default ForgotPasswordView;
 
 const styles = StyleSheet.create({
   container: {
@@ -93,7 +76,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   flex: {
-    // justifyContent: 'center',
     flex: 1,
   },
   icon: {
@@ -102,16 +84,8 @@ const styles = StyleSheet.create({
   },
   content: {
     marginLeft: 20,
-    flex: 5,
+    flex: 3,
     justifyContent: 'flex-end',
-    width: '80%',
-  },
-  baseTxt: {
-    fontSize: 14,
-    color: colors.primary,
-  },
-  bold: {
-    fontWeight: 'bold',
   },
   title: {
     fontSize: 36,
@@ -124,10 +98,6 @@ const styles = StyleSheet.create({
     color: colors.primary,
     marginVertical: 10,
   },
-  forgotPass: {
-    alignItems: 'flex-end',
-    marginBottom: 10,
-  },
   bottom: {
     flex: 1,
     justifyContent: 'space-between',
@@ -136,6 +106,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   button: {
+    ...commonStyles.shadow,
     borderRadius: 7,
     borderColor: colors.white,
     borderWidth: 1,
@@ -151,6 +122,7 @@ const styles = StyleSheet.create({
   newHere: {
     fontSize: 16,
     color: colors.white,
+    ...commonStyles.shadow,
   },
   register: {
     fontWeight: 'bold',
@@ -163,7 +135,7 @@ const styles = StyleSheet.create({
     height: 40,
     paddingHorizontal: 12,
     borderColor: colors.primary,
-    // width: '80%',
+    width: '80%',
     marginBottom: 10,
   },
 });

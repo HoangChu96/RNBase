@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import {
-  SafeAreaView,
   StyleSheet,
+  View,
 } from 'react-native';
 
 const AppContainer = (props: any) => {
-  return <SafeAreaView style={styles.container}>{props.children}</SafeAreaView>;
+  return <View style={styles.container}>{props.children}</View>;
 };
 
 export default AppContainer;

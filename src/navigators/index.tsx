@@ -36,6 +36,8 @@ export function popToTop(): void {
 
 export enum ROUTE_NAME {
   Login = 'Login',
+  Register = 'Register',
+  ForgotPassword = 'ForgotPassword',
   Splash = 'Splash',
   Home = 'Home',
 }

@@ -20,8 +20,26 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.rnbasetemplate</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.226984178449-t1im9n85g6rrgiorkii08aas841lt169</string>
+				<string>fb162869856551258</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>162869856551258</string>
+	<key>FacebookClientToken</key>
+	<string>ac6e6e154cbb454e9cef85fd23e671f7</string>
+	<key>FacebookDisplayName</key>
+	<string>RNBase Template</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -51,5 +69,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+
+	<key>NSCameraUsageDescription</key>
+	<string>Your own description of the purpose</string>
+
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Your own description of the purpose</string>
 </dict>
 </plist>
