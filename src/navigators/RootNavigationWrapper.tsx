@@ -1,10 +1,11 @@
 import React from 'react';
 
+import {View} from 'react-native';
+
 import ForgotPasswordView from '@app/modules/auth/views/forgot.password.view';
 import GetStartView from '@app/modules/auth/views/get_start.view';
 import LoginView from '@app/modules/auth/views/login.view';
 import RegisterView from '@app/modules/auth/views/register.view';
-import HomeScreen from '@app/modules/livestreams/views/home';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -22,6 +23,10 @@ export type RootStackParamList = {
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
+
+const HomeDefault = () => {
+  return <View />;
+};
 
 export default function RootNavigationWrapper() {
   return (
@@ -61,7 +66,7 @@ export default function RootNavigationWrapper() {
             animation: 'fade',
           }}
         />
-        <Stack.Screen name={ROUTE_NAME.Home} component={HomeScreen} />
+        <Stack.Screen name={ROUTE_NAME.Home} component={HomeDefault} />
       </Stack.Navigator>
     </NavigationContainer>
   );

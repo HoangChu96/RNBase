@@ -8,6 +8,7 @@ import {appleAuth} from '@invertase/react-native-apple-authentication';
 const useAppleAuth = () => {
   useEffect(() => {
     // onCredentialRevoked returns a function that will remove the event listener. useEffect will call this function when the component unmounts
+    if (!appleAuth.isSupported) return;
     return appleAuth.onCredentialRevoked(async () => {
       console.warn(
         'If this function executes, User Credentials have been Revoked',

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RNBase</string>
+    <string name="facebook_app_id">162869856551258</string>
+    <string name="facebook_client_token">ac6e6e154cbb454e9cef85fd23e671f7</string>
 </resources>

@@ -10,6 +10,7 @@ import FastImage from 'react-native-fast-image';
 
 import Space from '@app/components/space';
 import {colors} from '@app/theme';
+import {isIOS} from '@app/utils/constants';
 import images from '@app/utils/images';
 import {commonStyles} from '@app/utils/styles';
 
@@ -40,7 +41,9 @@ const LoginSocialIcon = (props: LoginSocialIconProps) => {
       <Space space={16} />
       <IconButton icon={images.ic_fb} onPress={props.onPressFacebook} />
       <Space space={16} />
-      <IconButton icon={images.ic_apple} onPress={props.onPressApple} />
+      {isIOS && (
+        <IconButton icon={images.ic_apple} onPress={props.onPressApple} />
+      )}
     </View>
   );
 };
