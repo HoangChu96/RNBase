@@ -16,7 +16,7 @@ import {colors} from '@app/theme';
 import images from '@app/utils/images';
 import {commonStyles} from '@app/utils/styles';
 
-import useRegisterController from '../view-controllers/useRegisterController';
+import useRegisterController from '../controllers/useRegisterController';
 
 interface LoginViewProps {}
 

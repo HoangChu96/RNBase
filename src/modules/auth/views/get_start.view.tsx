@@ -13,7 +13,7 @@ import FastImage from 'react-native-fast-image';
 import {colors} from '@app/theme';
 import images from '@app/utils/images';
 
-import useGetStartController from '../view-controllers/useGetStartController';
+import useGetStartController from '../controllers/useGetStartController';
 
 const GetStartView = () => {
   const {goToLogin} = useGetStartController();

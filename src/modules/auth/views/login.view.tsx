@@ -15,7 +15,7 @@ import {colors} from '@app/theme';
 import images from '@app/utils/images';
 
 import LoginSocialIcon from '../components/login.social.icon';
-import useLoginController from '../view-controllers/useLoginController';
+import useLoginController from '../controllers/useLoginController';
 
 interface LoginViewProps {}
 

@@ -5,7 +5,7 @@ import {Keyboard} from 'react-native';
 import {ROUTE_NAME} from '@app/navigators';
 import {useNavigation} from '@react-navigation/native';
 
-import useAuthorization from '../view-models/social-auth/useAuthorization';
+import useAuthorization from '../models/social-auth/useAuthorization';
 
 const useLoginController = () => {
   const navigation = useNavigation();
@@ -13,12 +13,8 @@ const useLoginController = () => {
     useAuthorization();
 
   useEffect(() => {
-    Keyboard.addListener('keyboardWillShow', () => {
-      console.log('==== keyboardWillShow');
-    });
-    Keyboard.addListener('keyboardWillHide', () => {
-      console.log('==== keyboardWillHide');
-    });
+    Keyboard.addListener('keyboardWillShow', () => {});
+    Keyboard.addListener('keyboardWillHide', () => {});
   }, []);
 
   const onDismissKeyboard = () => {
