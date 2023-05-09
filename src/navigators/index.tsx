@@ -40,4 +40,5 @@ export enum ROUTE_NAME {
   ForgotPassword = 'ForgotPassword',
   Splash = 'Splash',
   Home = 'Home',
+  ComponentDemo = 'ComponentDemo',
 }

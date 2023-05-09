@@ -5,12 +5,12 @@ import {
   KeyboardAvoidingView,
   SafeAreaView,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
 
+import Text from '@app/components/text';
 import {colors} from '@app/theme';
 import images from '@app/utils/images';
 

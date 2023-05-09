@@ -73,14 +73,14 @@ export const colors = {
    */
   separator: palette.neutral300,
   /**
-   * Error messages.
-   */
-  error: palette.angry500,
-  /**
    * Error Background.
    *
    */
   errorBackground: palette.angry100,
   white: palette.neutral100,
   primary: '#2F80ED',
+
+  success: '#3CC461',
+  warning: palette.accent500,
+  error: palette.angry500,
 };

@@ -1,0 +1,36 @@
+import {s} from './scales';
+
+const size = {
+  size_10: s(10),
+  size_12: s(12),
+  size_13: s(13),
+  size_14: s(14),
+  size_15: s(15),
+  size_16: s(16),
+  size_17: s(17),
+  size_18: s(18),
+  size_19: s(19),
+  size_20: s(20),
+  size_21: s(21),
+  size_22: s(22),
+  size_23: s(23),
+  size_24: s(24),
+  size_25: s(25),
+  size_26: s(26),
+  size_27: s(27),
+  size_28: s(28),
+  size_30: s(30),
+  size_31: s(31),
+  size_32: s(32),
+  size_33: s(33),
+  size_34: s(34),
+  size_35: s(35),
+  size_36: s(36),
+  size_38: s(38),
+  size_40: s(40),
+  size_46: s(46),
+  size_48: s(48),
+  size_50: s(50),
+};
+
+export default size;

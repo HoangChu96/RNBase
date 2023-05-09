@@ -6,6 +6,7 @@ import ForgotPasswordView from '@app/modules/auth/views/forgot.password.view';
 import GetStartView from '@app/modules/auth/views/get_start.view';
 import LoginView from '@app/modules/auth/views/login.view';
 import RegisterView from '@app/modules/auth/views/register.view';
+import DemoComponentScreen from '@app/modules/demo/component.demo';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -20,6 +21,7 @@ export type RootStackParamList = {
   [ROUTE_NAME.Register]: undefined;
   [ROUTE_NAME.ForgotPassword]: undefined;
   [ROUTE_NAME.Home]: undefined;
+  [ROUTE_NAME.ComponentDemo]: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -38,7 +40,13 @@ export default function RootNavigationWrapper() {
           name={ROUTE_NAME.Splash}
           component={GetStartView}
           options={{
-            obscureBackground: false,
+            animation: 'fade',
+          }}
+        />
+        <Stack.Screen
+          name={ROUTE_NAME.ComponentDemo}
+          component={DemoComponentScreen}
+          options={{
             animation: 'fade',
           }}
         />
@@ -46,7 +54,6 @@ export default function RootNavigationWrapper() {
           name={ROUTE_NAME.Login}
           component={LoginView}
           options={{
-            obscureBackground: false,
             animation: 'fade',
           }}
         />
@@ -54,7 +61,6 @@ export default function RootNavigationWrapper() {
           name={ROUTE_NAME.Register}
           component={RegisterView}
           options={{
-            obscureBackground: false,
             animation: 'fade',
           }}
         />
@@ -62,7 +68,6 @@ export default function RootNavigationWrapper() {
           name={ROUTE_NAME.ForgotPassword}
           component={ForgotPasswordView}
           options={{
-            obscureBackground: false,
             animation: 'fade',
           }}
         />
